@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:workshop/auth/auth_provider.dart';
 import 'package:workshop/auth/auth_user_prefrence.dart';
 import 'package:workshop/auth/blog_provider.dart';
+import 'package:workshop/helpers/allblogs_provider.dart';
 import 'package:workshop/helpers/user_provider.dart';
 import 'package:workshop/models/user_mode.dart';
 import 'package:workshop/screens/home_screen.dart';
@@ -15,6 +16,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => BlogProvider()),
+        ChangeNotifierProvider(create: (_) => AllBlogsProvider()),
       ],
       child:const MyApp(),
       ),

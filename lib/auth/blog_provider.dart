@@ -50,7 +50,7 @@ if(response.statusCode == 200){
   }else{
     result={
       'status': 500,
-      'message': "Unable to create Ppst",
+      'message': "Unable to create Post",
       'data': null
   };
   }
