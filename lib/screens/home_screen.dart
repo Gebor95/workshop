@@ -226,31 +226,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 // import 'package:workshop/auth/auth_user_prefrence.dart';
