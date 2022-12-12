@@ -20,12 +20,10 @@ class AllBlogsProvider with ChangeNotifier {
         // decoding our online data body
         final jsonData= jsonDecode(resp.body);
         // loop through fetched data and store in allBlogsList
-      print(jsonData['data']);
         for (var blogindex in jsonData['data']) {
           Data data = Data.fromJson(blogindex);
 
          allBlogsList.add(data);
-               print(allBlogsList);
         }
       }
     }on SocketException{

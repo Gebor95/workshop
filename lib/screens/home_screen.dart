@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
+    String username =Provider.of<UserProvider>(context).changeName;
     var blogslist = Provider.of<AllBlogsProvider>(context).allBlogsList;
     getUser().then((value){
       User user =User(user: value.user, token: value.token);
@@ -79,14 +80,19 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 20.0,),
           Expanded(
             child: ListView.builder(
-              
+              reverse: true,
               itemCount: blogslist.length,
               itemBuilder: (context, index){
-              return const ListTile(
-                leading: Icon(Icons.edit),
-                title: Text("Blog Title"),
-                subtitle: Text("Blog Body"),
-                trailing: Icon(Icons.delete),
+              return  ListTile(
+                leading: username == blogslist[index].author
+                ? const Icon(Icons.edit)
+                :
+               const Icon(Icons.person),
+                title: Text(blogslist[index].title),
+                subtitle: Text(blogslist[index].body),
+                trailing: username == blogslist[index].author
+                ? const Icon(Icons.delete)
+                : const SizedBox(),
               );
             }),
           ),
